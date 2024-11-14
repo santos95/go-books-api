@@ -37,6 +37,7 @@ func bookById(c *gin.Context) {
 
 	if err != nil {
 
+		c.IndentedJSON(http.StatusNotFound, gin.H{"message": "Book Not Found!"})
 		return
 	}
 
