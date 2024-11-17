@@ -145,10 +145,21 @@ func returnBook(c *gin.Context) {
 func main() {
 
 	router := gin.Default()
+
+	// get all books endpoint
 	router.GET("/books", getBooks)
+
+	// get book by id endpoint
 	router.GET("/books/:id", bookById)
+
+	// create book endpoint
 	router.POST("/books", createBooks)
+
+	// checkout endpoint
 	router.PATCH("/checkout", checkoutBook)
+
+	// checkint endpoint
 	router.PATCH("/return", returnBook)
+	
 	router.Run("localhost:9090")
 }
